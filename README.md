@@ -14,20 +14,62 @@
 Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
 
+``` swift
+var emptyString = " "
+
+var x = 1...10
+for i in x{
+emptyString = emptyString + "\(i)" + " "
+}
+print (emptyString)
+
+```
+
 ***
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
+``` swift 
+var emptyString = " "
+
+var x = 5...51
+for i in x{
+if i % 2 == 0{
+emptyString = emptyString + "\(i)" + " "
+}
+}
+print (emptyString)
+
+```
 
 ***
 ## Question 3
 
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
+``` swift
+var x = 1...60
+for i in x{
+if i % 10 == 4 {
+emptyString = emptyString + "\(i)" + " "
+}
+}
+print (emptyString)
+```
+
+
 ***
 ## Question 4
 
 Print each character in the string `"Hello world!"`
+``` Swift
+var greet = "Hello World"
+
+
+for i in greet {
+print (i)
+}
+```
 
 ***
 ## Question 5
@@ -36,12 +78,33 @@ Print out the last character in the string below.  You cannot use the Character 
 
 `let myStringSeven = "Hello world!"`
 
+``` swift
+let myStringSeven = "Hey Buddy"
+
+print (myStringSeven[myStringSeven.index(before: myStringSeven.endIndex)])
+```
 ***
 ## Question 6
 
 Write code that switches on a string, given the following conditions:
 - If the string's length is even, print out every character.
 - If the string's length is odd, print out every other character.
+
+``` swift
+var greet = "hello poppet0"
+var evenOrOdd = 2
+if greet.count % 2 == 0{
+print(greet)
+}
+else {
+for i in greet{
+if evenOrOdd % 2 == 1{
+print (i, terminator: "")
+}
+evenOrOdd += 1
+}
+}
+```
 
 ***
 ## Question 7
@@ -57,16 +120,33 @@ Build five pairs of **canonically equivalent** strings, the first of each being 
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
+```
+var greet =  "\u{0048}"+"\u{0045}"+"\u{004c}"+"\u{004c}"+"\u{004f}"+" "+"\u{0057}"+"\u{004f}"+"\u{0052}"+"\u{004c}"+"\u{0044}"
+
+print(greet)
+```
 
 ***
 ## Question 10
 
 **Using only Unicode**, print out your name.
+```
+var name = "\u{0054}" + "\u{0049}"+"\u{0041}"+" "+" \u{004C}"+"\u{0045}"+"\u{004e}"+"\u{0044}"+"\u{004f}"+"\u{0052}"
+
+print (name)
+
+```
 
 ***
 ## Question 11
 
 **Using only Unicode**, print out `"HELLO WORLD!"` in another language.
+```
+var greet = "\u{0042}\u{004f}\u{004e}\u{004a}\u{004f}\u{0055}\u{0052} \u{004c}\u{0045} \u{004d}\u{004f}\u{004e}\u{0044}\u{0045}"
+
+print (greet)
+```
+
 
 ***
 ## Question 12
@@ -90,6 +170,16 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
 ```
+```swift
+var flowerRow = 1...7
+var flowerBox = "| \u{2698} | \u{2698} | \u{2698} | \u{2698} | \u{2698} | "
+var woodenBox = "- - - - - - - - - - -"
+print (woodenBox)
+for i in flowerRow{
+print (flowerBox)
+}
+print (woodenBox)
+```
 
 ***
 ## Question 13
@@ -107,7 +197,21 @@ Chess Board:
 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
 ```
+```
+var chessRoyalsLight = "\u{2656} \u{2658} \u{2657} \u{2655} \u{2654} \u{2657} \u{2658} \u{2656}"
+var chessPawnsLight = "\u{2659} \u{2659} \u{2659} \u{2659} \u{2659} \u{2659} \u{2659} \u{2659}"
+var chessPawnsDark = "\u{265f} \u{265f} \u{265f} \u{265f} \u{265f} \u{265f} \u{265f} \u{265f}"
+var chessRoyalsDark = "\u{265c} \u{265e} \u{265d} \u{265a} \u{265b} \u{265d} \u{265e} \u{265c}"
+print (chessRoyalsLight)
+print (chessPawnsLight)
+print (" ")
+print (" ")
+print (" ")
+print (" ")
+print (chessPawnsDark)
+print (chessRoyalsDark)
 
+```
 ***
 ## Question 14
 
@@ -116,6 +220,12 @@ You are given a string stored in the variable `aString`. Create new string named
 ```swift
 var aString = "Replace the letter e with \*"
 // Your code here
+ ```
+ ```
+ var aString = "Replace the letter e with *"
+ 
+ var newString = aString.replacingOccurrences(of: "e", with: "*")
+ print(newString)
  ```
 
 Example:
@@ -135,8 +245,11 @@ You are given a string stored in variable `aString`. Create a new string called 
 var aString = "this string has 29 characters"
 var reverse = ""
 
-// Your code here
+// var aString = "la, la, dee dah dee"
+var reversed = String (aString.reversed())
+print (reversed)
 ```
+
 
 Example:
 Input:
@@ -153,7 +266,15 @@ You are given a string stored in variable `aString`. Print `true` if `aString` i
 ```swift
 let aString = "anutforajaroftuna"
 
-// Your code here
+// let aString = "anutforajaroftuna"
+var reversed = String (aString.reversed())
+
+if aString == reversed{
+print (true)
+}
+else{
+print(false)
+}
 ```
 
 Example 1:
@@ -178,7 +299,10 @@ You are given a string stored in variable `problem`. Write code so that you prin
 ```swift
 var problem = "split this string into words and print them on separate lines"
 
-// Your code
+//var problem = "split this string into words and print them on separate lines"
+var newProblem = problem.replacingOccurrences(of: " ", with: "\n")
+
+print(newProblem)
 ```
 
 Example:
@@ -208,7 +332,16 @@ You are given a string stored in variable `problem`. Write code that prints the 
 ```swift
 var problem = "find the longest word in the problem description"
 
-// Your code here
+// var problem = "find the longest word in the problem description"
+var word = problem.split(separator: " ")
+var longWord = ""
+
+for i in word{
+if i.count >= longWord.count {
+longWord = String(i)
+}
+}
+print(longWord)
 ```
 
 Example:
@@ -230,6 +363,15 @@ let vowels = "aeiou"
 let consonants = "bcdfghjklmnpqrstvwxyz"
 let input = "Count how many vowels I have!"
 ```
+```
+let vowels = "aeiou"
+let consonants = "bcdfghjklmnpqrstvwxyz"
+let input = "Count how many vowels I have!"
+
+var quest19 = (vowels: "\(vowels.count)", consonants: "\(consonants.count)")
+
+print (quest19)
+```
 
 ***
 ## Question 20
@@ -242,5 +384,17 @@ Example:
 Input: `"How are you doing this Monday?"`
 
 Output: `7`
+
+```
+var quest20 = "How are you doing this Monday?"
+var word = quest20.split(separator: " ")
+
+if word.count > 0{
+print (word.last!.count)
+}
+else {
+print ("No last word")
+}
+```
 
 ***
